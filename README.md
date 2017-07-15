@@ -24,46 +24,55 @@
 
 - 添加ssh免密钥登陆（本地操作）
 
-     # ssh-keygen -t rsa -C "你的邮箱账户（好像也可以不写）"
+        # ssh-keygen -t rsa -C "你的邮箱账户（好像也可以不写）"
+
 - 拷贝生成的id_rsa.pub内容
 
-     # cat id_rsa.pub
+        # cat id_rsa.pub
+
 - 点击右上角头像，选择Setting，打开页面选择SSH and GPG keys
 - 在SSH and GPG keys右侧点击SSH keys右边的New SSH key，在弹出的框中粘贴刚才复制的密钥，然后单击添加即可
 - 本地验证是否成功
 
-    # ssh -T git@github.com
-    Hi admin! You've successfully authenticated, but GitHub does not provide shell access.
+       # ssh -T git@github.com
+        Hi admin! You've successfully authenticated, but GitHub does not provide shell access.
     >如有以上提示就说明成功了，这个是测试，后面拉去、上传代码文件不需要这样操作
 
 ## 步骤三：
 
 - 本地创建与github同名的文件夹
 
-    # mkdir project
+        # mkdir project
     > project为你github上的仓库名
 - 首次初始化本地仓库
 
-    # git init
+        # git init
+
 - 设置github登录名和邮箱
 
-    # git config --global user.name "your name"
-    # git config --global user.email "your email"
+       # git config --global user.name "your name"
+       # git config --global user.email "your email"
+
 - 将该Github版本仓库添加到本机的远程列表中
 
-    #  git remote add origin  git@github.com:guo365/fly.git
+       #  git remote add origin  git@github.com:yuoraccount/your Repostiry.git
+
 - 添加内容至test.md
 
-    # echo "test is ok" >test.md
+       # echo "test is ok" >test.md
+
 - 提交文件到本地缓存库
 
-    # git add test.md
+       # git add test.md
+
 - 提交到本地git版本库
 
-      # git commit -M "add words"
+       # git commit -M "add words"
+
 - 同步本地版本库至github
 
       # git push origin master
+
 备注：首次同步到github需要添加`-u`参数,或者先pull下
 
 ## 容易遇到的问题
@@ -88,5 +97,5 @@
 >这个问题github上面的代码里面已经有你本地新添加的代码文件内容，他不允许直接覆盖
 
 >解决方法：
-    # git pull origin master
+   ` # git pull origin master`
 >重新拉去一次，然后重新提交
