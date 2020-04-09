@@ -67,7 +67,7 @@
 
 - 提交到本地git版本库
 
-       # git commit -M "add words"
+       # git commit -m "add words"
 
 - 同步本地版本库至github
 
